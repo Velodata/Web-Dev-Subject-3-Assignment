@@ -1,1 +1,363 @@
 body { font-family: Arial, sans-serif; margin: 2rem; background-color: #f5f5f5; }
+/* Basic Reset */
+body, h1, h2, p, ul, li, a, form, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+  }
+  
+  /* Body Styling */
+  body {
+    background: #352f5b;
+    font-size: 23px;
+    color: #ccc;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* NavBar Styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff177f; /* Magenta */
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .navbar .logo a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  
+  .navbar .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .navbar .nav-links a:hover {
+    color: #ffe6ff; /* Lighter magenta */
+    transform: scale(1.1); /* Slight zoom effect */
+  }
+  
+  .nav-links a.active {
+    color: #ffe6ff; /* Lighter magenta */
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  /* Hero Section */
+  header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    border-bottom: 2px solid #ff177f; /* Magenta accent */
+    margin-bottom: 1.5rem;
+  }
+  
+  header h1 {
+    color: #ff177f; /* Magenta */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  header p {
+    color: #555;
+    font-size: 1.1rem;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo a {
+    color: #ff177f; /* Matches your existing magenta color scheme */
+    text-decoration: none;
+    font-size: 1.5rem; /* Adjust font size as needed */
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-image {
+    width: 30px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 10px; /* Adds spacing between "TaskSphere" and the logo */
+  }
+  
+  /* Container */
+  .container {
+    max-width: 400px;
+  }
+  
+  
+  .add-item-section input {
+    width: 500px;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ff177f; /* Magenta border */
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .add-item-section input:focus {
+    border-color: #930093; /* Darker magenta */
+    box-shadow: 0 0 5px rgba(185, 0, 180, 0.5);
+  }
+  
+  /* Todos List */
+  .todos li,
+  .items-section ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ff8bbf;
+    color: #fff;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+  }
+  
+  .todos li:last-child,
+  .items-section ul li:last-child {
+    border-bottom: none;
+  }
+  
+  .todos li:hover,
+  .items-section ul li:hover {
+    background-color: #ffe6ff; /* Subtle background hover */
+  }
+  
+  .todos li p,
+  .items-section ul li p {
+    margin: 0;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Delete Button */
+  .delete,
+  .items-section ul li button {
+    background-color: #ff177f;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .items-section ul li button:hover,
+  .delete:hover {
+    background-color: #ff177f; /* Darker magenta */
+    transform: scale(1.1); /* Slight zoom effect */
+  }
+  
+  /* Add Item Section */
+  .add-item-section {
+    text-align: center;
+    padding: 2rem;
+    color: #ff177f;
+  }
+  
+  .add-item-section button {
+    padding: 0.5rem 1rem;
+    background-color: #ff177f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .add-item-section button:hover {
+    background-color: #930093;
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  /* Filtered */
+  .filtered {
+    display: none !important;
+  }
+  
+  /*Submit Button */
+  .btn.btn-light {
+    background-color:#ff177f; /* Replace with your desired color */
+    color: white;              /* Adjust text color if needed */
+    border: none;              /* Optional: Remove any border */
+    padding: 0.5rem 1rem;      /* Optional: Adjust padding */
+    border-radius: 8px;        /* Optional: Add rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Optional: Smooth transitions */
+  }
+  
+  /* Button Hover */
+  .btn:hover {
+    background: #a724a7;
+    color: #fff;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-radius: 13px 13px;
+    transition: 0.8s;
+  }
+  
+  .btn.btn-light:hover {
+    background-color: #ff8bbf; /* Replace with hover color */
+    transform: scale(1.05);    /* Optional: Add hover effect */
+    color:#fff
+  }
+  
+  /* Items List Section */
+  .items-section {
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 800px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+  }
+  
+  .items-section h2 {
+    text-align: center;
+    color: #ff177f;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+  
+  /*Contact Form */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    color: #fff;
+    background: #fff;
+    padding-top: 20px;
+    border: 1px solid #ccc;
+    max-width: 400px;
+  }
+  
+  /* Contact Form Section */
+  .contact-form-section 
+  /* Form Section */
+  form {
+    max-width: 600px; /* Set a maximum width */
+    margin: 0 auto; /* Centre the form horizontally */
+    padding: 1rem; /* Add inner spacing */
+    padding-top: 20px;
+    background-color: #fff; /* Optional: Background colour */
+    border-radius: 8px; /* Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Light shadow for effect */
+  }
+  
+  .contact-form-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 20px;
+    color: #ff177f;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  
+  .contact-form label {
+    color: #a6a3a3; /* Use a consistent, readable colour for your labels */
+    font-size: 1.1rem;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #e5e5ee;
+    color: #333;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: #ff177f;
+    box-shadow: 0 0 5px rgba(255, 23, 127, 0.5);
+  }
+  
+  .contact-form button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #ff177f;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .contact-form button:hover {
+    background: #930093;
+    transform: scale(1.05);
+  }
+  
+  /* Contact Details Section */
+  .contact-details-section {
+    text-align: center;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 10px;
+  }
+  
+  .contact-details-section h2 {
+    color: #ff177f;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-details-section ul {
+    list-style: none;
+    padding: 0;
+    color:#a6a3a3
+  }
+  
+  .contact-details-section ul li {
+    font-size: 1.1rem;
+    margin: 0.8rem 0;
+    color: #a6a3a3;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ff177f;
+    color: white;
+    margin-top: auto;
+    font-size: 0.9rem;
+  }
+  
+  footer a {
+    color: #ffe6ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: white;
+  }
