@@ -1,130 +1,125 @@
-/* General reset to avoid browser inconsistencies */
-body, html {
+/* General Reset and Body Styling */
+* {
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-/* Navbar styling for alignment and visual */
-.navbar {
-  margin: 0;
-  padding: 10px 20px; /* Add some padding for content spacing */
-  position: fixed; /* Ensure the navbar stays at the top */
-  top: 0;
-  left: 0;
-  width: 100%; /* Full width */
-  background-color: #007bff; /* Bright blue background for navbar */
-  color: #fff;
-  font-size: 18px;
-  z-index: 1030; /* Stays above other elements */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-}
-
-/* Ensure content starts below the navbar */
-.container {
-  padding-top: 70px; /* Adjust for fixed navbar height */
-  margin: 0 auto;
-  max-width: 1000px; /* Constrain content width */
-}
-
-/* Form container customization */
-.form-container {
-  margin: 20px auto;
-  max-width: 600px;
-  text-align: center;
-  background: #fff; /* White background for contrast */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for card style */
-}
-
-/* Task input field and button styling */
-.task-input {
-  width: 70%;
-  padding: 10px;
-  margin-right: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
   box-sizing: border-box;
 }
 
-.add-btn {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #28a745; /* Green button */
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.add-btn:hover {
-  background-color: #218838; /* Darker green on hover */
-}
-
-/* Task list styling */
-.tasks-container .task-list {
-  list-style-type: none;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
   padding: 0;
-  margin: 20px auto;
-  max-width: 600px;
-  background: #fff; /* White background for list */
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for card style */
+  min-height: 100vh;
 }
 
-.task-list li {
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
-  border-bottom: 1px solid #ddd; /* Divider for tasks */
-  font-size: 16px;
+  z-index: 1000;
 }
 
-.task-list li:last-child {
-  border-bottom: none; /* Remove divider for the last item */
-}
-
-.task-list .delete-btn {
-  background-color: #dc3545; /* Red for delete button */
+.navbar a {
   color: #fff;
-  padding: 5px 10px;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Container for the Main Content */
+.container {
+  margin-top: 70px; /* Add margin to compensate for fixed navbar */
+  padding: 20px;
+  max-width: 800px;
+  background: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* To-Do List Styles */
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.todo-list li:nth-child(odd) {
+  background-color: #ececec;
+}
+
+.todo-item {
+  flex: 1;
+}
+
+.todo-actions {
+  margin-left: 10px;
+}
+
+.todo-actions button {
+  background-color: #007bff;
+  color: #fff;
   border: none;
+  padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
 }
 
-.task-list .delete-btn:hover {
-  background-color: #c82333; /* Darker red on hover */
+.todo-actions button:hover {
+  background-color: #0056b3;
 }
 
-/* Empty state message */
-.empty-state {
-  text-align: center;
-  color: #888;
+/* Add Button and Input */
+.add-todo {
+  display: flex;
   margin-top: 20px;
-  font-size: 18px;
-  font-style: italic;
 }
 
-/* Footer styling */
-footer {
-  margin-top: 30px;
+.add-todo input {
+  flex: 1;
   padding: 10px;
-  text-align: center;
-  background-color: #f8f9fa; /* Light grey background */
-  color: #6c757d;
-  font-size: 14px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  outline: none;
 }
 
-footer p {
-  margin: 0;
+.add-todo button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.add-todo button:hover {
+  background-color: #218838;
 }
