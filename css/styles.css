@@ -1,10 +1,18 @@
 /* General Reset */
+
+/* Reset body and html margins */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
@@ -15,12 +23,20 @@ body {
 
 /* Navigation Bar */
 .navbar {
-  margin-bottom: 20px;
+  margin: 0; /* Ensure no extra margins */
+  padding: 10px; /* Inner spacing */
+  width: 100%; /* Full width */
+  position: fixed; /* Stick navbar to the top */
+  top: 0;
+  left: 0;
+  background-color: #f8f9fa; /* Background for visibility */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for style */
 }
 
 /* Header */
 .header {
   text-align: center;
+  margin-top: 80px; /* Add space below fixed navbar */
   margin-bottom: 20px;
 }
 
