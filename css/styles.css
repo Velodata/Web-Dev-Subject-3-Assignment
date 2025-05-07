@@ -7,34 +7,38 @@
 
 /* Body Styling */
 body {
-  display: flex; /* Enables flexbox layout */
-  flex-direction: column; /* Stacks elements vertically */
-  min-height: 100vh; /* Ensures the body spans the full viewport height */
-  margin: 0; /* Nullifies any default margin */
-  overflow: hidden; /* Prevents all scrolling */
-  background-color: #f4f4f9; /* Light grey pastel background */
-  font-family: 'Arial', sans-serif; /* Default font */
-  color: #333; /* Dark grey text */
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9; /* Light grey background */
+  color: #1F2A35; /* Dark navy text */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Navbar Styling */
+.container {
+  width: 90%;
+  margin: auto;
+  max-width: 1200px;
+}
+
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
-  background-color: #1F2A35; /* Dark navy background */
+  background-color: #1F2A35; /* Dark navy */
   color: #fff;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .navbar .logo a {
-  color: #4A90E2; /* Vibrant blue for branding */
+  color: #fff;
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
@@ -47,212 +51,231 @@ body {
 }
 
 .navbar ul li a {
-  color: #fff; /* White for links */
+  color: #fff;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
 .navbar ul li a:hover {
-  color: #4A90E2; /* Vibrant blue on hover */
+  color: #4A90E2; /* Blue hover */
 }
 
-/* Main Container */
-.container {
-  flex: 1; /* Ensures the container grows to fill available space */
-  max-width: 1200px;
-  margin: 6rem auto 2rem; /* Adds 6rem space above the container */
-  padding: 2rem;
-  background: #ffffff; /* White background for content */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Clean shadow effect */
-  border-radius: 8px; /* Rounded corners for a modern look */
+.navbar ul li a.active {
+  color: #50B378; /* Green Active */
 }
 
-/* Title Section */
-.title {
+/* Page Header */
+.page-header {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-top: 120px;
+  color: #000;
 }
 
-.title h2 {
-  color: #333; /* Dark text for headers */
-  margin: 30px 0 40px 0;
+.page-header h2 {
+  font-size: 2rem;
+}
+
+.page-header p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* About Page Styles */
+.about-section {
+  margin-top: 120px 0;
+}
+
+.about-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #1F2A35; /* Dark navy */
+}
+
+.about-section p {
+  line-height: 1.8;
+  color: #333; /* Subtle grey text */
+  margin-bottom: 1.5rem;
+}
+
+.about-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.about-section ul li {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.about-section ul li strong {
+  color: #4A90E2; /* Blue headings */
 }
 
 /* Buttons */
 .btn {
-  padding: 8px 16px;
-  font-weight: 700;
-  background-color: #4A90E2; /* Vibrant blue for buttons */
-  border: none;
+  display: inline-block;
+  background-color: #4A90E2; /* Blue */
   color: #fff;
-  cursor: pointer;
-  box-shadow: 1px 6px 12px rgba(154, 154, 154, 0.1); /* Button shadow */
-  border-radius: 4px; /* Rounded corners */
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #3A78C2; /* Darker shade for hover */
+  background-color: #3D8F60; /* Slight green hover */
+  cursor: pointer;
 }
 
-.btn.active-section {
-  background-color: #50B378; /* Fresh green for active sections */
-  color: #FFFFFF; 
-}
-
-/* Alert Styling */
-.alert {
-  text-align: center;
-  margin: 1rem 0;
-  padding: 0.8rem;
-  background-color: #FFEBE5; /* Soft alert red background */
-  color: #FF6B6B; /* Bright red for errors */
+.footer-btn {
+  background: none;
+  border: 2px solid #4A90E2;
+  padding: 0.5rem 1rem;
   font-weight: bold;
-  border: 1px solid #FF6B6B;
-  border-radius: 4px;
+  color: #4A90E2; /* Ensure consistency */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.alert.d-none {
-  display: none;
+.footer-btn:hover {
+  background-color: #4A90E2;
+  color: #fff;
 }
 
-/* Inputs Section */
-.inputs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-  margin: 1.5rem 0;
+/* Contact Form */
+.contact-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
-.inputs input,
-.inputs select {
+.contact-form h3 {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #1F2A35;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
   padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4A90E2;
   outline: none;
-  flex: 1;
-  min-width: 200px;
 }
 
-.inputs input:focus,
-.inputs select:focus {
-  border-color: #4A90E2; /* Focus with accent blue */
-}
-
-.add-tasks-btn {
-  background-color: #4A90E2; 
+.contact-form .btn {
+  background-color: #4A90E2; /* Blue */
   color: #fff;
-  padding: 0.8rem 1.5rem;
+  padding: 0.7rem 1.4rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.add-tasks-btn:hover {
-  background-color: #50B378; /* Darker green on hover */
+.contact-form .btn:hover {
+  background-color: #3D8F60; /* Darker Green */
 }
 
-/* Filters Section */
-.filter {
+/* Contact Info */
+.contact-info {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3 {
+  margin-bottom: 1rem;
+}
+
+.contact-info ul {
+  list-style: none;
+}
+
+.contact-info ul li {
+  margin-bottom: 1rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
 }
 
-.filter .btn {
+.contact-info ul li i {
+  color: #4A90E2; /* Blue icons */
+  margin-right: 0.5rem;
+}
+
+/* Input error styling */
+.error {
+  border-color: #E74C3C; /* Red border for error */
+}
+
+.error-text {
+  color: #E74C3C; /* Red error text */
+  font-size: 0.9rem; /* Slightly smaller than normal text */
+  margin-top: 5px;
+  display: block;
+}
+
+.footer {
+  background-color: #1F2A35; /* Navy */
+  color: #fff; /* White text */
+  text-align: center; /* Center-aligns text */
+  padding: 1.5rem 0; /* Padding for proper spacing */
+  border-top: 2px solid #4A90E2; /* Blue Accent */
+  width: 100%; /* Ensures it spans the full width */
+  position: relative; /* Ensures it's positioned correctly */
+}
+
+.footer a.footer-link {
+  color: #4A90E2;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.footer a.footer-link:hover {
+  color: #50B378;
+}
+
+.footer-btn {
+  background-color: #50B378; /* Green */
+  color: #fff;
+  border: none;
   padding: 0.6rem 1rem;
-  border: 1px solid #333;
-  background-color: #fff;
-  color: #333; /* Neutral button colour */
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 1rem;
 }
 
-.filter .btn:hover {
-  background-color: #1F2A35; /* Dark navy hover for filter buttons */
-  color: #fff; /* White hover text */
-}
-
-/* Task List Table */
-.tasks {
-  margin-top: 20px;
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.tasks th {
-  background-color: #1F2A35;
-  color: white;
-  text-align: center;
-}
-
-.tasks td {
-  background-color: #f8f9fc; /* Subtle grey for rows */
-  padding: 1rem;
-  text-align: center;
-}
-
-.tasks td .btn {
-  background-color: #50B378; /* Green buttons within tasks */
-}
-
-.tasks td .btn:hover {
-  background-color: #3A8D60;
-}
-
-.icon-class {
-  padding: 0.5px; /* Adds spacing inside the icon */
-  margin:3px; /* Adds spacing around the icon */
-}
-
-/* Clear Button */
-.clear-btn {
-  margin-top: 10px;
-  background-color: #4A90E2; 
-  color: white;
-  padding: 0.8rem 1.2rem;
-}
-
-.clear-btn:hover {
-  background-color: #C9302C; /* Darker hover red */
-}
-
-/* Footer Styling */
-footer {
-  width: 100%;
-  background-color: #1F2A35;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: auto;
-}
-
-footer p {
-  font-size: 0.9rem;
+.footer-btn:hover {
+  background-color: #3D8F60;
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
   .navbar ul {
     flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .inputs {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  .filter {
-    flex-direction: column;
-    gap: 1.2rem;
-    align-items: center;
+    gap: 1rem;
   }
 }
