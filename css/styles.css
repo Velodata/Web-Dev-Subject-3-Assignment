@@ -143,7 +143,7 @@ body {
 }
 
 .add-tasks-btn {
-  background-color: #50B378; /* Fresh green for primary buttons */
+  background-color: #4A90E2; 
   color: #fff;
   padding: 0.8rem 1.5rem;
   border: none;
@@ -153,7 +153,7 @@ body {
 }
 
 .add-tasks-btn:hover {
-  background-color: #3A8D60; /* Darker green on hover */
+  background-color: #50B378; /* Darker green on hover */
 }
 
 /* Filters Section */
@@ -188,13 +188,15 @@ body {
 }
 
 .tasks th {
-  background-color: #4A90E2; /* Vibrant blue table header */
+  background-color: #1F2A35;
   color: white;
+  text-align: center;
 }
 
 .tasks td {
   background-color: #f8f9fc; /* Subtle grey for rows */
   padding: 1rem;
+  text-align: center;
 }
 
 .tasks td .btn {
@@ -205,10 +207,15 @@ body {
   background-color: #3A8D60;
 }
 
+.icon-class {
+  padding: 0.5px; /* Adds spacing inside the icon */
+  margin:3px; /* Adds spacing around the icon */
+}
+
 /* Clear Button */
 .clear-btn {
   margin-top: 10px;
-  background-color: #FF6B6B; /* Error actions button (red) */
+  background-color: #4A90E2; 
   color: white;
   padding: 0.8rem 1.2rem;
 }

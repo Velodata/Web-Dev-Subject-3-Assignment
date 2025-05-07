@@ -95,7 +95,7 @@ function createTaskRow(taskName, dueDate, priority) {
     dueDateCell.textContent = formattedDate;
     
     const editButton = document.createElement("button");
-    editButton.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
+    editButton.innerHTML = '<i class="fa-regular fa-pen-to-square icon-class"></i>';
     editButton.addEventListener("click", () => {
         taskDescription.setAttribute("contenteditable", "true");
         taskDescription.focus();
@@ -106,7 +106,7 @@ function createTaskRow(taskName, dueDate, priority) {
     });
 
     const completeButton = document.createElement("button");
-    completeButton.innerHTML = '<i class="fa-solid fa-check"></i>';
+    completeButton.innerHTML = '<i class="fa-solid fa-check icon-class"></i>';
     completeButton.addEventListener("click", () => {
         statusCell.textContent = "Completed";
         taskDescription.style.textDecoration = "line-through";
@@ -115,7 +115,7 @@ function createTaskRow(taskName, dueDate, priority) {
     });
     
     const deleteButton = document.createElement("button");
-    deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash icon-class"></i>';
     deleteButton.addEventListener("click", () => {
         taskRow.remove();
         const remainingTasks = taskList.getElementsByTagName("tr").length - 1;
