@@ -375,4 +375,43 @@ h2, h3 {
   color: #4A90E2; /* Consistent blue for icons */
 }
 
+/* About Section */
+.container {
+  max-width: 900px;
+  margin: 6rem auto;
+  padding: 1.5rem;
+}
 
+.about-section {
+  margin-bottom: 3rem;
+  margin: top 3rem;
+  background-color: #fff; /* White background for sections */
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  
+}
+
+.about-section h1 {
+  font-size: 1.8rem;
+  align-items: space-around;
+  color: #4A90E2;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  color: #4A4A4A; /* Grey text for readability */
+}
+
+.about-section ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+}
+
+.about-section li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #4A4A4A;
+}
