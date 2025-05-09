@@ -1,13 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Home Page</title>
-  <link rel="stylesheet" href="../css/styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navivy - Task Manager App</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/assets/Favicon.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/749b88acba.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1>Welcome to the Assignment Frontend</h1>
-  <p>This page will fetch data from your provided REST API.</p>
-  <script src="../js/main.js"></script>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Navivy</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+            <li><a href="/pages/dashboard.html">Dashboard</a></li>
+            <li><a href="/pages/data.html">Users in Database</a></li>
+            <li><a href="/pages/form.html">Form</a></li>
+            <li><a href="/pages/help.html">Help</a></li>
+            <li><a href="/pages/profile.html">Profile</a></li>
+            <li><a href="/pages/legal.html">Legal</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content: Task Manager -->
+    <div class="container">
+        <!-- Page Title -->
+        <div class="title">
+            <h2>Task Manager</h2>
+        </div>
+
+        <!-- Alert Message -->
+        <p class="alert d-none">All inputs must be filled</p>
+
+        <!-- Task Input Section -->
+        <div class="inputs">
+            <input type="text" id="taskName" class="task-name-input" placeholder="Write a task">
+            <input type="date" id="taskDueDate" class="task-due-date">
+            <select id="priority" class="priority-input">
+                <option value="" disabled selected>Priority</option>
+                <option value="High Priority">High Priority</option>
+                <option value="Low Priority">Low Priority</option>
+            </select>
+            <button class="btn add-tasks-btn" id="addTask">Add</button>
+        </div>
+
+        <!-- Filter and Task List Section -->
+        <div class="none-inputs d-none">
+            <!-- Filter Buttons -->
+            <div class="filter">
+                <!-- Status Filters -->
+                <div class="status-filter">
+                    <button class="btn" id="allTasks">All Tasks</button>
+                    <button class="btn" id="activeTasks">Active Tasks</button>
+                    <button class="btn" id="completedTasks">Completed Tasks</button>
+                </div>
+                <!-- Sorting Filters -->
+                <div class="sorting-filter">
+                    <button class="btn sort-btn" id="sortTasks">Sort by Priority</button>
+                    <button class="btn sort-btn" id="sortTasksByDate">Sort by Due Date</button>
+                </div>
+            </div>
+
+            <!-- Task Listing Table -->
+            <div class="tasks-list">
+                <table class="tasks" id="tasksListing">
+                    <thead>
+                        <tr>
+                            <th class="column">Status</th>
+                            <th class="column">Tasks</th>
+                            <th class="column">Priority</th>
+                            <th class="column">Due Date</th>
+                            <th class="column">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic rows will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Clear All Tasks Button -->
+        <button class="btn clear-btn d-none" id="clearTasks">Clear All</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="text-center">
+        <p>© 2025 TaskSphere. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="/js/main.js"></script>
+    <script src="app.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
